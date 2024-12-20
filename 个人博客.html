@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人博客</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+        /* head */
+        .header-image {
+            width: 100%;
+            height: 43vh; 
+            background-image: url('./图集/1.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            background-color: rgb(179, 133, 34);
+            padding: 10px 0;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: block;
+            text-align: center;
+        }
+        .navbar a:hover {
+            background-color: rgb(204, 98, 21);
+            color: black;
+        }
+        /* 轮播图 */
+        .photo-gallery {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80%; 
+            margin: 0 auto;
+            background-color: rgb(239, 229, 229);
+            overflow: hidden; 
+        }
+        .photo-gallery img {
+            width: 80%; 
+            height: 600px; 
+            cursor: pointer;
+            background-size: cover;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+        }
+        /* 点击按钮，可以切换图片 */
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            border: solid #fff;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .arrow-left {
+            left: 10px;
+            transform: translateY(-50%) rotate(-225deg);
+        }
+        .arrow-right {
+            right: 10px;
+            transform: translateY(-50%) rotate(-45deg);
+        }
+        /* 关于我 */
+        h3{
+            margin: 0 auto;
+            padding: 5px 0;
+            text-align: center;
+            background-color: rgb(179, 133, 34);
+        }
+        /* 左边介绍 */
+        .message{
+            display: grid;
+            grid-template-columns: 500px auto;
+            column-gap: 25px;
+        }
+        .jieshao{
+            margin: 0 0 0 100px;
+            padding: 20px 0 0 80px;
+            background-color: rgb(251, 245, 236);
+            border: 1px solid black;
+        }
+        .jieshao img{
+            width: 200px;
+            height: 250px;
+            background-size: cover;
+        }
+        /* 右边爱好 */
+        .aihao{
+            padding: 0 40px 0 40px;
+            margin: 0 100px 0 0;
+            background-color: antiquewhite;
+            border: 1px solid black;
+        }
+        h4{
+            margin: 20px 0 0 0;
+        }
+        .aihao p{
+            text-indent: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-image"></div>
+    <div class="navbar">
+        <a href="#home">首页</a>
+        <a href="#photos">个人相册</a>
+        <a href="#characters">喜欢的番</a>
+        <a href="#books">喜欢的书</a>
+    </div>
+    <div class="photo-gallery">
+        <div class="arrow arrow-left" id="arrow-left">&lt;</div>
+        <img id="photo" src="./图集/3.jpg" alt="Photo Gallery">
+        <div class="arrow arrow-right" id="arrow-right">&gt;</div>
+    </div>
+    <br>
+    <h3>关于我</h3>
+    <div class="message">
+        <div class="jieshao">
+            <img src="./图集/10.jpg" alt="">
+            <p>姓名：。。。<br>
+                年龄：20<br>
+                爱好：追番 看小说<br>
+                家乡：乐山<br>
+                喜欢的食物：土豆
+            </p>
+        </div>
+        <div class="aihao">
+            <h4>喜欢的番：排球少年</h4>
+            <p>
+                小时候，男主角日向翔阳从电视上看见了排球比赛，乌野高中的一名小个子在球场上的英姿，
+                简直就是个“小巨人”，翔阳对此印象非常深刻，并开始迷上排球，一直想成为“小巨人”一样的人。
+            </p>
+            <p>初中时排球社不够人数，只好默默等待，后来在终于有新成员后，参与了第一次也是最后一次的比赛，不幸对决了最强队伍，结果当然落败。
+
+            </p>
+            <p>单凭自己的话，是绝对无法看见那景色的，不是自己一人的话，或许就能看见了......
+                为了能够打出“胜利”的比赛，翔阳努力考入乌野高中，为了实现成为“小巨人”的排球梦想!
+            </p>
+            <h4>喜欢的小说：魔道祖师</h4>
+            <ul>
+                <li>未知全貌，不予置评。</li>
+                <li>为遇一人而入红尘，人去我亦去，此身不留尘。</li>
+                <li>喝他喝过的酒，受他受过的伤。</li>
+                <li>自以为心若顽石，却终究人非草木</li>
+                <li>你要记着别人对你的好，不要去记你对别人的好。人心里不要装那么多东西，这样才会快活自在。</li>
+            </ul>
+
+        </div>
+    </div>
+    <script>
+        const photos = ['./图集/3.jpg','./图集/15.jpg', './图集/2.jpg', './图集/4.jpeg', './图集/13.jpg','./图集/5.jpeg',
+        './图集/16.jpg','./图集/6.jpg', './图集/7.jpg','./图集/14.jpg', './图集/8.jpeg', './图集/9.png', './图集/17.jpg','./图集/11.jpg'];
+        let currentIndex = 0;
+        const photoElement = document.getElementById('photo');
+        const arrowLeft = document.getElementById('arrow-left');
+        const arrowRight = document.getElementById('arrow-right');
+ 
+        function updatePhoto() {
+            currentIndex = (currentIndex + 1) % photos.length;
+            photoElement.src = photos[currentIndex];
+        }
+ 
+        arrowLeft.addEventListener('click', function() {
+            currentIndex = (currentIndex - 1 + photos.length) % photos.length;
+            photoElement.src = photos[currentIndex];
+        });
+ 
+        arrowRight.addEventListener('click', updatePhoto);
+        photoElement.addEventListener('click', updatePhoto);
+    </script>
+
+</body>
+</html>
